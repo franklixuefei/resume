@@ -1,4 +1,4 @@
 Frank's Resume
 ==============
 
-Personal Website with Facebook theme.
+Personal website with Facebook theme.
