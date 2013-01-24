@@ -86,7 +86,7 @@ $experience = array(
             'boss_detail' => array(
                 'name' => 'Xinyuan Fan',
                 'pos' => 'Co-Founder',
-                'phone' => '416-888-4567',
+                'phone' => '519-781-1052',
                 'email' => 'xinyuan.f@gmail.com'
             )
         ),
@@ -107,8 +107,8 @@ $experience = array(
             'date_to' => 'Apr. 2012',
             'boss_detail' => array(
                 'name' => 'Elissa K.Liu',
-                'pos' => 'CEO/Co-Founder',
-                'phone' => '416-888-4567',
+                'pos' => 'CEO/Founding Partner',
+                'phone' => '416-992-5499',
                 'email' => 'elissa@sparkgrowthpartners.com'
             )
         )
