@@ -575,7 +575,7 @@ span#recent_projects {
     margin: 0 auto;
     vertical-align: middle;
     max-height: 32px;
-    width: auto;
+    width: auto; 
 }
 
 
@@ -593,8 +593,7 @@ span#recent_projects {
 }
 
 .event_content_list {
-    /*padding-bottom: 5px;*/
-    /*padding-top: 5px;*/
+    
 }
 
 .event_content_list > li:first-child {

@@ -78,7 +78,8 @@ $experience = array(
             'pos' => 'Web Developer',
             'content' => array(
                 'Built a complete real-time messaging system, with automatic message pushing and notification.',
-                'Constructed the project back-end framework using CodeIgniter with MVC architecture.',
+                'Optimized SQL queries for optimal speed of data exchanging and better user experience.',
+                'Constructed the project back-end framework using CodeIgniter (written in PHP) with MVC architecture.',
                 'Executed alpha and closed beta tests across all major browsers including IE8.'
             ),
             'date_from' => 'Sep',
@@ -98,10 +99,10 @@ $experience = array(
             'link_url' => 'http://www.sparkgrowthpartners.com',
             'pos' => 'Database Design and Integration Developer',
             'content' => array(
-                'Developed the business referral system compatible both for desktops and mobile devices.',
-                'Implemented merge tags and merge-tag parser for auto-pulling business information',
-                'Completely built the back-end side with Ruby on Rails as well as front-end side.',
-                'Managed the basics of Ruby on Rails in one week, using online tutorials like Codeschool and Railscasts.'
+                'Developed the business referral system compatible for both desktops and mobile devices.',
+                'Implemented merge tags and merge-tag parser for automatically pulling business information.',
+                'Developed auto-saving and auto-recovery mechanism for user input.',
+                'Managed the basics of Ruby on Rails in one week, and use it as the project framework along with MySQL Lite.'
             ),
             'date_from' => 'Jan',
             'date_to' => 'Apr. 2012',
