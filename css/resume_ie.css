@@ -1,0 +1,7 @@
+.borderclass, #avatar_cover, #avatar_cover img, .small_curve_3px, .small_curve_2px { 
+    behavior: url(border-radius.htc);
+}
+
+#avatar_cover {
+    background: none repeat scroll 0 0 #b2b2b2;
+}
