@@ -48,7 +48,7 @@ $self_intro = array(
     'avatar' => 'avatar_small',
     'short_des' => 'CSer at Waterloo',
     'long_des' => 'Hello everyone! I\'m a dedicated Computer Science guy at Univeristy of Waterloo. I love to get involved in the latest technologies and hand on various
-                    kinds of projects. <br/>My area of interests are webapp development and mobile game development.'
+                    kinds of projects. <br/>My area of interests are web development and mobile game development.'
 );
 
 $education = array(
