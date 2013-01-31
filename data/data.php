@@ -18,7 +18,7 @@ $projs = array(
         'id' => 2,
         'img_url' => 'images/baitanla_proj.png',
         'name' => 'Baitanla',
-        'link_url' => 'http://baitan.la'
+        'link_url' => 'http://xuefei-frank.com/market/'
     ),
     array(
         'id' => 3,
