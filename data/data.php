@@ -34,9 +34,9 @@ $projs = array(
     ),
     array(
         'id' => 4,
-        'img_url' => 'images/quadris_proj.png',
-        'name' => 'Quadris',
-        'link_url' => 'https://github.com/franklixuefei/quadris'
+        'img_url' => 'images/wlpp.png',
+        'name' => 'WLPP Compiler',
+        'link_url' => 'https://github.com/franklixuefei/wlpp'
     )
 );
 
