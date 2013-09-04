@@ -290,13 +290,13 @@ var resume = function() {
                                                 '<div class="event_content">'+
                                                     '<div role="article">'+
                                                         '<div class="event_header clear">'+
-                                                            '<a class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'">'+
+                                                            '<a target="_blank" class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'">'+
                                                                 '<img src="images/'+ evt.xp_events[i].logo_name +'.png" class="event_avatar" />'+
                                                             '</a>'+
                                                             '<div class="event_title">'+
                                                                 '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
                                                                 '<h5 class="event_title_name fcg fwb">'+
-                                                                    '<a href="'+ evt.xp_events[i].link_url +'">Worked @ '+ evt.xp_events[i].name +'</a>'+
+                                                                    '<a target="_blank" href="'+ evt.xp_events[i].link_url +'">Worked @ '+ evt.xp_events[i].name +'</a>'+
                                                                 '</h5>'+
                                                                 '<div class="event_title_des fcg">'+
                                                                     evt.xp_events[i].pos +
@@ -332,17 +332,15 @@ var resume = function() {
                                                 '<div class="event_content">'+
                                                     '<div role="article">'+
                                                         '<div class="event_header clear">'+
-                                                            '<a class="event_avatar_wrapper" href="#">'+
-                                                                '<img src="images/sparkgrowth.png" class="event_avatar" />'+
+                                                            '<a class="event_avatar_wrapper" href="#" target="_blank">'+
+                                                                '<img src="" class="event_avatar" />'+
                                                             '</a>'+
                                                             '<div class="event_title">'+
                                                                 '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
                                                                 '<h5 class="event_title_name fcg fwb">'+
-                                                                    '<a href="#">Worked at Spark Growth Partners</a>'+
+                                                                    '<a target="_blank" href="#"></a>'+
                                                                 '</h5>'+
-                                                                '<div class="event_title_des fcg">'+
-                                                                    'Database Design and Integration Developer'+
-                                                                '</div>'+
+                                                                '<div class="event_title_des fcg"></div>'+
                                                             '</div>'+
                                                         '</div>'+
                                                         '<div class="event_content_text clear">'+

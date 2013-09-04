@@ -9,6 +9,12 @@ $data = array();
 
 $projs = array(
     array(
+        'id' => 0,
+        'img_url' => 'images/glance.png',
+        'name' => 'Glance',
+        'link_url' => 'https://github.com/franklixuefei/glance'
+    ),
+    array(
         'id' => 1,
         'img_url' => 'images/hanoi_proj.png',
         'name' => 'Tower of Hanoi',
@@ -33,7 +39,7 @@ $projs = array(
         'link_url' => 'https://github.com/franklixuefei/quadris'
     ),
     array(
-        'id' => 4,
+        'id' => 5,
         'img_url' => 'images/wlpp.png',
         'name' => 'WLPP Compiler',
         'link_url' => 'https://github.com/franklixuefei/wlpp'
@@ -70,6 +76,28 @@ $education = array(
 $experience = array(
     'type' => 2, // work
     'xp_events' => array(
+        array(
+            'xp_type' => 0, // work experience
+            'logo_name' => 'jingu',
+            'name' => 'Jingu Apps Inc.',
+            'link_url' => 'http://www.jinguapps.com',
+            'pos' => 'Mobile Developer',
+            'content' => array(
+                'Built a complete real-time messaging system, with automatic message pushing and notification.',
+                'Optimized SQL queries for optimal speed of data exchanging and better user experience.',
+                'Constructed the project back-end framework using CodeIgniter (written in PHP) with MVC architecture.',
+                'Executed alpha and closed beta tests across all major browsers including IE8.'
+            ),
+            'date_from' => 'May',
+            'date_to' => 'Aug. 2013',
+            'boss_detail' => array(
+                'name' => 'Hossam Bahlool',
+                'pos' => 'Co-Founder',
+                'phone' => '519-580-0878',
+                'email' => 'hossam@jinguapps.com'
+            )
+        ),
+        
         array(
             'xp_type' => 0, // work experience
             'logo_name' => 'friendoc',
