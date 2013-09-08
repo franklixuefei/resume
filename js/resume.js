@@ -1,6 +1,7 @@
 var resume = function() {
 
     var initialize = function() {
+        page.init();
         data.get();
     };
     
@@ -91,6 +92,23 @@ var resume = function() {
         }
     }();
     */
+   
+    var page = function() {
+        var initialize = function() {
+            $('a.see_more').bind('click', resume.recentProjs.toggle);
+            $('.fb_buttons').bind('mousedown', function() {
+                $(this).addClass('active');
+            }).bind('mouseup', function() {
+                $(this).removeClass('active');
+            }).bind('mousemove', function() {
+                $(this).removeClass('active');
+            });
+        };
+        
+        return {
+            init: initialize
+        }
+    }();
     
     var data = function() {  
         var importData = function() { // append recent projs and set numRecentProjs
@@ -189,9 +207,9 @@ var resume = function() {
             spreaded = !spreaded
         };
         return {
-           post: appendRecentProjs,
-           toggle: toggleProjs,
-           setProjNum: setProjNum
+            post: appendRecentProjs,
+            toggle: toggleProjs,
+            setProjNum: setProjNum
         } 
     }();
     
@@ -211,69 +229,69 @@ var resume = function() {
             switch(parseInt(evt.type)) {
                 case 0: // self intro
                     entry = $(
-                    '<div class="item">'+
+                        '<div class="item">'+
                         '<div id="event_topline"></div>'+
                         '<div class="event">'+
-                            '<img id="ribbon" src="images/ribbon.png" />'+
-                            '<div class="event_content">'+
-                                '<div role="article">'+
-                                    '<div class="event_header clear">'+
-                                        '<a class="event_avatar_wrapper" href="#">'+
-                                            '<img src="images/'+ evt.avatar +'.png" class="event_avatar" />'+
-                                        '</a>'+
-                                        '<div class="event_title">'+
-                                            '<h5 class="event_title_name fcg fwb">'+
-                                                '<a href="#">'+ evt.name +'</a>'+
-                                            '</h5>'+
-                                            '<div class="event_title_des fcg">'+evt.short_des+'</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                    '<div class="event_content_text clear">'+evt.long_des+'</div>'+
-                                '</div>'+
-                            '</div>'+
+                        '<img id="ribbon" src="images/ribbon.png" />'+
+                        '<div class="event_content">'+
+                        '<div role="article">'+
+                        '<div class="event_header clear">'+
+                        '<a class="event_avatar_wrapper" href="#">'+
+                        '<img src="images/'+ evt.avatar +'.png" class="event_avatar" />'+
+                        '</a>'+
+                        '<div class="event_title">'+
+                        '<h5 class="event_title_name fcg fwb">'+
+                        '<a href="#">'+ evt.name +'</a>'+
+                        '</h5>'+
+                        '<div class="event_title_des fcg">'+evt.short_des+'</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="event_content_text clear">'+evt.long_des+'</div>'+
+                        '</div>'+
+                        '</div>'+
                         '</div>'+
                         '<i id="event_bottomline"></i>'+
-                    '</div>'
-                    );
+                        '</div>'
+                        );
                     break;
                 case 1: // education
                     var rows = '';
                     for (var i = 0; i < evt.edu_events.length; ++i) {
                         rows += '<div class="event_content_text clear list_bb">'+
-                                    '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+
-                                        '<img src="images/'+ evt.edu_events[i].logo_name +'.png" class="main_content_img" />'+
-                                    '</a>'+
-                                    '<div>'+
-                                        '<div class="school_name fsm fwb">'+
-                                            '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+ evt.edu_events[i].name +'</a>'+
-                                        '</div>'+
-                                        '<div class="school_date fss fcg">'+ evt.edu_events[i].date_from + ' - ' + evt.edu_events[i].date_to + '</div>'+
-                                        '<div class="school_loc mb5 fss fcg">'+ evt.edu_events[i].loc +'</div>'+
-                                        '<div class="school_prog fss fwb">'+ evt.edu_events[i].honours +'<br/>'+ evt.edu_events[i].prog +'</div>'+
-                                    '</div>'+
-                                '</div>';
+                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+
+                        '<img src="images/'+ evt.edu_events[i].logo_name +'.png" class="main_content_img" />'+
+                        '</a>'+
+                        '<div>'+
+                        '<div class="school_name fsm fwb">'+
+                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+ evt.edu_events[i].name +'</a>'+
+                        '</div>'+
+                        '<div class="school_date fss fcg">'+ evt.edu_events[i].date_from + ' - ' + evt.edu_events[i].date_to + '</div>'+
+                        '<div class="school_loc mb5 fss fcg">'+ evt.edu_events[i].loc +'</div>'+
+                        '<div class="school_prog fss fwb">'+ evt.edu_events[i].honours +'<br/>'+ evt.edu_events[i].prog +'</div>'+
+                        '</div>'+
+                        '</div>';
                     }
                     entry = $(
-                    '<div class="item">'+
+                        '<div class="item">'+
                         '<div id="event_topline"></div>'+
                         '<div class="event">'+
-                            '<div class="event_content">'+
-                                '<div role="article">'+
-                                    '<div class="event_header_other">'+
-                                        '<span class="logo event_header_col">'+
-                                            '<img src="images/education.png" />'+
-                                        '</span>'+
-                                        '<div class="event_header_col">'+
-                                            '<div class="event_title_name fcb">Education</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                    rows +
-                                '</div>'+
-                            '</div>'+
+                        '<div class="event_content">'+
+                        '<div role="article">'+
+                        '<div class="event_header_other">'+
+                        '<span class="logo event_header_col">'+
+                        '<img src="images/education.png" />'+
+                        '</span>'+
+                        '<div class="event_header_col">'+
+                        '<div class="event_title_name fcb">Education</div>'+
+                        '</div>'+
+                        '</div>'+
+                        rows +
+                        '</div>'+
+                        '</div>'+
                         '</div>'+
                         '<i id="event_bottomline"></i>'+
-                    '</div>'
-                    );
+                        '</div>'
+                        );
                     break;
                 case 2: // experience
                     var xp_entries = '';
@@ -285,74 +303,74 @@ var resume = function() {
                         }
                         if (parseInt(evt.xp_events[i].xp_type) == 0) { // work experience
                             xp_entries += '<div class="item">'+
-                                            '<div id="event_topline"></div>'+
-                                            '<div class="event">'+
-                                                '<div class="event_content">'+
-                                                    '<div role="article">'+
-                                                        '<div class="event_header clear">'+
-                                                            '<a target="_blank" class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'">'+
-                                                                '<img src="images/'+ evt.xp_events[i].logo_name +'.png" class="event_avatar" />'+
-                                                            '</a>'+
-                                                            '<div class="event_title">'+
-                                                                '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
-                                                                '<h5 class="event_title_name fcg fwb">'+
-                                                                    '<a target="_blank" href="'+ evt.xp_events[i].link_url +'">Worked @ '+ evt.xp_events[i].name +'</a>'+
-                                                                '</h5>'+
-                                                                '<div class="event_title_des fcg">'+
-                                                                    evt.xp_events[i].pos +
-                                                                '</div>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="event_content_text clear">'+
-                                                            '<ul class="event_content_list">'+
-                                                                rows+
-                                                            '</ul>'+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                    '<div class="event_bottom additional_info">'+
-                                                        '<div>'+
-                                                            '<div class="event_bottom_content">'+
-                                                                '<img src="images/info_icon.png" />'+
-                                                                '<span class="additional_name fwb">'+
-                                                                    '<a href="mailto:'+ evt.xp_events[i].boss_detail.email +'">'+ evt.xp_events[i].boss_detail.name +'</a>'+
-                                                                '</span>'+
-                                                                '<span class="additional_type fcg">'+ evt.xp_events[i].boss_detail.pos +'</span>'+
-                                                                '<span class="additional_phone fcb">'+ evt.xp_events[i].boss_detail.phone +'</span>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<i id="event_bottomline"></i>'+
-                                        '</div>'
+                            '<div id="event_topline"></div>'+
+                            '<div class="event">'+
+                            '<div class="event_content">'+
+                            '<div role="article">'+
+                            '<div class="event_header clear">'+
+                            '<a target="_blank" class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'">'+
+                            '<img src="images/'+ evt.xp_events[i].logo_name +'.png" class="event_avatar" />'+
+                            '</a>'+
+                            '<div class="event_title">'+
+                            '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
+                            '<h5 class="event_title_name fcg fwb">'+
+                            '<a target="_blank" href="'+ evt.xp_events[i].link_url +'">Worked @ '+ evt.xp_events[i].name +'</a>'+
+                            '</h5>'+
+                            '<div class="event_title_des fcg">'+
+                            evt.xp_events[i].pos +
+                            '</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '<div class="event_content_text clear">'+
+                            '<ul class="event_content_list">'+
+                            rows+
+                            '</ul>'+
+                            '</div>'+
+                            '</div>'+
+                            '<div class="event_bottom additional_info">'+
+                            '<div>'+
+                            '<div class="event_bottom_content">'+
+                            '<img src="images/info_icon.png" />'+
+                            '<span class="additional_name fwb">'+
+                            '<a href="mailto:'+ evt.xp_events[i].boss_detail.email +'">'+ evt.xp_events[i].boss_detail.name +'</a>'+
+                            '</span>'+
+                            '<span class="additional_type fcg">'+ evt.xp_events[i].boss_detail.pos +'</span>'+
+                            '<span class="additional_phone fcb">'+ evt.xp_events[i].boss_detail.phone +'</span>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>'+
+                            '<i id="event_bottomline"></i>'+
+                            '</div>'
                         } else { // general experience // TODO FIXME
                             xp_entries += '<div class="item">'+
-                                            '<div id="event_topline"></div>'+
-                                            '<div class="event">'+
-                                                '<div class="event_content">'+
-                                                    '<div role="article">'+
-                                                        '<div class="event_header clear">'+
-                                                            '<a class="event_avatar_wrapper" href="#" target="_blank">'+
-                                                                '<img src="" class="event_avatar" />'+
-                                                            '</a>'+
-                                                            '<div class="event_title">'+
-                                                                '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
-                                                                '<h5 class="event_title_name fcg fwb">'+
-                                                                    '<a target="_blank" href="#"></a>'+
-                                                                '</h5>'+
-                                                                '<div class="event_title_des fcg"></div>'+
-                                                            '</div>'+
-                                                        '</div>'+
-                                                        '<div class="event_content_text clear">'+
-                                                            '<ul class="event_content_list">'+
-                                                                rows+
-                                                            '</ul>'+
-                                                        '</div>'+
-                                                    '</div>'+                                                    
-                                                '</div>'+
-                                            '</div>'+
-                                            '<i id="event_bottomline"></i>'+
-                                        '</div>'
+                            '<div id="event_topline"></div>'+
+                            '<div class="event">'+
+                            '<div class="event_content">'+
+                            '<div role="article">'+
+                            '<div class="event_header clear">'+
+                            '<a class="event_avatar_wrapper" href="#" target="_blank">'+
+                            '<img src="" class="event_avatar" />'+
+                            '</a>'+
+                            '<div class="event_title">'+
+                            '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
+                            '<h5 class="event_title_name fcg fwb">'+
+                            '<a target="_blank" href="#"></a>'+
+                            '</h5>'+
+                            '<div class="event_title_des fcg"></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '<div class="event_content_text clear">'+
+                            '<ul class="event_content_list">'+
+                            rows+
+                            '</ul>'+
+                            '</div>'+
+                            '</div>'+                                                    
+                            '</div>'+
+                            '</div>'+
+                            '<i id="event_bottomline"></i>'+
+                            '</div>'
                         }
                         
                     }
@@ -362,40 +380,40 @@ var resume = function() {
                     var rows = '';
                     for (var i = 0; i < evt.activity_events.length; ++i) {
                         rows += '<div class="event_content_text clear list_bb">'+
-                                    '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+
-                                         '<img src="images/'+ evt.activity_events[i].logo_name +'.png" class="main_content_img_small" />'+
-                                    '</a>'+
-                                    '<div>'+
-                                        '<div class="activities_name fsm fwb">'+
-                                            '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+ evt.activity_events[i].name +'</a>'+
-                                        '</div>'+
-                                        '<div class="activities_date fss fcg">'+ evt.activity_events[i].date_from +' - '+ evt.activity_events[i].date_to +'</div>'+
-                                        '<div class="activities_loc fss fcg">'+ evt.activity_events[i].loc +'</div>'+
-                                        '<div class="activities_pos fss fwb">'+ evt.activity_events[i].pos +'</div>'+
-                                    '</div>'+
-                                '</div>'
+                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+
+                        '<img src="images/'+ evt.activity_events[i].logo_name +'.png" class="main_content_img_small" />'+
+                        '</a>'+
+                        '<div>'+
+                        '<div class="activities_name fsm fwb">'+
+                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+ evt.activity_events[i].name +'</a>'+
+                        '</div>'+
+                        '<div class="activities_date fss fcg">'+ evt.activity_events[i].date_from +' - '+ evt.activity_events[i].date_to +'</div>'+
+                        '<div class="activities_loc fss fcg">'+ evt.activity_events[i].loc +'</div>'+
+                        '<div class="activities_pos fss fwb">'+ evt.activity_events[i].pos +'</div>'+
+                        '</div>'+
+                        '</div>'
                     }
                     entry = $(
-                    '<div class="item">'+
+                        '<div class="item">'+
                         '<div id="event_topline"></div>'+
                         '<div class="event">'+
-                            '<div class="event_content">'+
-                                '<div role="article">'+
-                                    '<div class="event_header_other">'+
-                                        '<span class="logo event_header_col">'+
-                                            '<img src="images/clubs.png" />'+
-                                        '</span>'+
-                                        '<div class="event_header_col">'+
-                                            '<div class="event_title_name fcb">Activities & Interests</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                    rows+
-                                '</div>'+
-                            '</div>'+
+                        '<div class="event_content">'+
+                        '<div role="article">'+
+                        '<div class="event_header_other">'+
+                        '<span class="logo event_header_col">'+
+                        '<img src="images/clubs.png" />'+
+                        '</span>'+
+                        '<div class="event_header_col">'+
+                        '<div class="event_title_name fcb">Activities & Interests</div>'+
+                        '</div>'+
+                        '</div>'+
+                        rows+
+                        '</div>'+
+                        '</div>'+
                         '</div>'+
                         '<i id="event_bottomline"></i>'+
-                    '</div>'
-                    );
+                        '</div>'
+                        );
                     break;
                 default: // others
                     entry = null;
@@ -418,5 +436,5 @@ var resume = function() {
 
 $(document).ready(function() {
     resume.init();
-    $('a.see_more').bind('click', resume.recentProjs.toggle);
+    
 });

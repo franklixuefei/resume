@@ -174,7 +174,7 @@ ul {
     vertical-align: -7px;
 }
 
-.basic_info_wrapper #phone_email {
+.basic_info_wrapper .fb_buttons {
     border:1px solid #a5a5a5;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -182,29 +182,48 @@ ul {
     -o-border-radius: 3px;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 32px;
     padding-bottom: 4px;
     padding-top: 4px;
     vertical-align: 2px;
-    background-image: url("../images/bar_1.png");
+    background-image: url("../images/fb_assets.png");
+    background-position: 0 -53px;
     background-repeat: no-repeat;
     background-size: auto auto;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
 }
 
-.basic_info_wrapper #phone_email span {
+.basic_info_wrapper .fb_buttons:hover {
+    border-color: #7a7a7a;
+    background-color: rbga(0,0,0,0);
+}
+
+.basic_info_wrapper .fb_buttons.active {
+    border-color: #7a7a7a;
+    background-image: url("../images/fb_assets.png");
+    background-position: 0 -4px;
+    border-color: rgba(59,89,152,0.5);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;
+    background-color: rbga(0,0,0,0);
+}
+
+.basic_info_wrapper .fb_buttons#resume_wrapper {
+    margin-left: 22px;
+}
+
+.basic_info_wrapper .fb_buttons#resume_wrapper span img {
+    vertical-align: middle; 
+    margin-right: 6px;
+}
+
+.basic_info_wrapper .fb_buttons span {
     padding: 10px;
-}
-
-.basic_info_wrapper #phone_email #vr {
-    background-color: #d9d9d9;
-    height: 23px;
-    padding: 0;
-    position: absolute;
-    top: 7px;
-    width: 1px;
+    color: #333333;
 }
 
 a {
@@ -213,8 +232,6 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
-
 
 a {
     color: #3B5998;
