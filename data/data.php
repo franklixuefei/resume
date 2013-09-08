@@ -50,11 +50,11 @@ $data['projs'] = $projs;
 
 $self_intro = array(
     'type' => 0, // self intro
-    'name' => 'Xuefei Li',
+    'name' => 'Xuefei Li (Frank)',
     'avatar' => 'avatar_small',
     'short_des' => 'CSer at Waterloo',
-    'long_des' => 'Hello everyone! I\'m a dedicated Computer Science guy at Univeristy of Waterloo. I love to get involved in the latest technologies and hand on various
-                    kinds of projects. <br/>My area of interests are web development and mobile game development.'
+    'long_des' => 'Hi everyone! I\'m a devoted Computer Science guy at Univeristy of Waterloo. I love to get involved in the latest technologies and hand on various
+                    kinds of projects. <br/>My area of interests are web development and mobile app/game development.'
 );
 
 $education = array(
@@ -83,10 +83,10 @@ $experience = array(
             'link_url' => 'http://www.jinguapps.com',
             'pos' => 'Mobile Developer',
             'content' => array(
-                'Built a complete real-time messaging system, with automatic message pushing and notification.',
-                'Optimized SQL queries for optimal speed of data exchanging and better user experience.',
-                'Constructed the project back-end framework using CodeIgniter (written in PHP) with MVC architecture.',
-                'Executed alpha and closed beta tests across all major browsers including IE8.'
+                'Solely developed an social network based HTML5 mobile app - <a target="_blank" href="https://github.com/franklixuefei/Glance"><span class="italic">Glance</span></a>.',
+                'Implemented key features for the existing iOS project - <a target="_blank" href="https://itunes.apple.com/ca/app/jingu-friends-find-chat-or/id533165865?mt=8"><span class="italic">Jingu Friends</span></a>.',
+                'Implemented server calls conforming to pre-defined server protocols for ongoing projects using <a target="_blank" href="http://framework.zend.com/manual/2.0/en/index.html"><span class="italic">Zend</span></a> framework and <a target="_blank" href="https://github.com/nicolasff/phpredis"><span class="italic">Redis</span></a>.',
+                'Optimized server functions to minify the elasped time between data requests and responds using <a target="_blank" href="https://github.com/nicolasff/phpredis"><span class="italic">Redis</span></a> and <a target="_blank" href="http://www.couchbase.com/documentation"><span class="italic">Couchbase</span></a>.'
             ),
             'date_from' => 'May',
             'date_to' => 'Aug. 2013',

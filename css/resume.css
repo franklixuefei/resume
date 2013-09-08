@@ -723,3 +723,20 @@ img#ribbon {
     padding-bottom: 10px;
 }
 
+.italic {
+    font-style: italic;
+}
+
+.footer {
+    text-align:center;
+}
+
+.footer span {
+    color: #ADACAA;
+}
+
+.fb-like-wrapper {
+    left: 624px;
+    position: absolute;
+    top: 118px;
+}
