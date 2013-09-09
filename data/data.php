@@ -102,7 +102,7 @@ $experience = array(
             'xp_type' => 0, // work experience
             'logo_name' => 'friendoc',
             'name' => 'FrienDoc Inc.',
-            'link_url' => 'http://www.sparkgrowthpar.com',
+            'link_url' => 'http://apps.renren.com/friendoc/',
             'pos' => 'Web Developer',
             'content' => array(
                 'Built a complete real-time messaging system, with automatic message pushing and notification.',

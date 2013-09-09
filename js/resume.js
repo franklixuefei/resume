@@ -96,6 +96,7 @@ var resume = function() {
     var page = function() {
         var initialize = function() {
             $('a.see_more').bind('click', resume.recentProjs.toggle);
+            
             $('.fb_buttons').bind('mousedown', function() {
                 $(this).addClass('active');
             }).bind('mouseup', function() {
@@ -103,6 +104,29 @@ var resume = function() {
             }).bind('mousemove', function() {
                 $(this).removeClass('active');
             });
+            
+            $('a#facebook').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Social Networks', 'View', 'Facebook']);
+            });
+            $('a#linkedin').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Social Networks', 'View', 'Linkedin']);
+            });
+            $('a#github').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Social Networks', 'View', 'Github']);
+            });
+            $('a#googleplus').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Social Networks', 'View', 'Google Plus']);
+            });
+            $('span#email_wrapper').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Personal Contact Info', 'Send Email', 'Email Button']);
+            });
+            $('a#email_link').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Personal Contact Info', 'Send Email', 'Email Link']);
+            });
+            $('span#resume_wrapper').bind('click', function() {
+                _gaq.push(['_trackEvent', 'Downloadable Contents', 'Download', 'Resume']);
+            });
+               
         };
         
         return {
@@ -143,7 +167,7 @@ var resume = function() {
                     $('div.timeline').css('height', $('div.item_container').css('height'));
                 },
                 error: function(a, b, c) {
-                    alert(a+b+c);
+//                    alert(a+b+c);
                 }
             });
         };
@@ -178,8 +202,11 @@ var resume = function() {
             } else {
                 $(proj_image).fadeIn();
             }
+            
+            var recentProjLink = $('<a>').attr('class', 'basic_proj_content').attr('href', proj.link_url).attr('target','_blank');
+            
             var entry = $('<li>').attr('id', 'basic_proj_' + proj.id)
-            .append($('<a>').attr('class', 'basic_proj_content').attr('href', proj.link_url).attr('target','_blank')
+            .append(recentProjLink
                 .append($('<div>').attr('class', 'detail')
                     .append($(proj_image))
                     )
@@ -188,6 +215,9 @@ var resume = function() {
                     )
                 .append($('<span>').attr('class', 'text').text(proj.name))
                 );
+            recentProjLink.bind('click', function() {
+                _gaq.push(['_trackEvent', 'Recent Projects', 'View', proj.name]);
+            });
             return entry;
         };
         
@@ -198,11 +228,13 @@ var resume = function() {
                 $('div.basic_nav').stop().animate({
                     height: 121+(numRows-1)*110
                 }, 200);
+                _gaq.push(['_trackEvent', 'Recent Projects', 'Toggle More', 'Unfold']);
             } else {
                 $('div.see_more_button').removeClass('active');
                 $('div.basic_nav').stop().animate({
                     height: 121
                 }, 200);
+                _gaq.push(['_trackEvent', 'Recent Projects', 'Toggle More', 'Fold']);
             }
             spreaded = !spreaded
         };
@@ -236,12 +268,12 @@ var resume = function() {
                         '<div class="event_content">'+
                         '<div role="article">'+
                         '<div class="event_header clear">'+
-                        '<a class="event_avatar_wrapper" href="#">'+
+                        '<a class="event_avatar_wrapper" href="#" onclick="_gaq.push([\'_trackEvent\', \'Event Link (Avatar)\', \'Open\', \'Self Intro\']);">'+
                         '<img src="images/'+ evt.avatar +'.png" class="event_avatar" />'+
                         '</a>'+
                         '<div class="event_title">'+
                         '<h5 class="event_title_name fcg fwb">'+
-                        '<a href="#">'+ evt.name +'</a>'+
+                        '<a href="#" onclick="_gaq.push([\'_trackEvent\', \'Event Link\', \'Open\', \'Self Intro\']);">'+ evt.name +'</a>'+
                         '</h5>'+
                         '<div class="event_title_des fcg">'+evt.short_des+'</div>'+
                         '</div>'+
@@ -258,12 +290,12 @@ var resume = function() {
                     var rows = '';
                     for (var i = 0; i < evt.edu_events.length; ++i) {
                         rows += '<div class="event_content_text clear list_bb">'+
-                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+
+                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link (Avatar)\', \'Open\', \'Education: '+ evt.edu_events[i].name +'\']);">'+
                         '<img src="images/'+ evt.edu_events[i].logo_name +'.png" class="main_content_img" />'+
                         '</a>'+
                         '<div>'+
                         '<div class="school_name fsm fwb">'+
-                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'">'+ evt.edu_events[i].name +'</a>'+
+                        '<a target="_blank" href="'+ evt.edu_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link\', \'Open\', \'Education: '+ evt.edu_events[i].name +'\']);">'+ evt.edu_events[i].name +'</a>'+
                         '</div>'+
                         '<div class="school_date fss fcg">'+ evt.edu_events[i].date_from + ' - ' + evt.edu_events[i].date_to + '</div>'+
                         '<div class="school_loc mb5 fss fcg">'+ evt.edu_events[i].loc +'</div>'+
@@ -308,13 +340,13 @@ var resume = function() {
                             '<div class="event_content">'+
                             '<div role="article">'+
                             '<div class="event_header clear">'+
-                            '<a target="_blank" class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'">'+
+                            '<a target="_blank" class="event_avatar_wrapper" href="'+ evt.xp_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link (Avatar)\', \'Open\', \'Work Experience: '+ evt.xp_events[i].name +'\']);">'+
                             '<img src="images/'+ evt.xp_events[i].logo_name +'.png" class="event_avatar" />'+
                             '</a>'+
                             '<div class="event_title">'+
                             '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
                             '<h5 class="event_title_name fcg fwb">'+
-                            '<a target="_blank" href="'+ evt.xp_events[i].link_url +'">Worked @ '+ evt.xp_events[i].name +'</a>'+
+                            '<a target="_blank" href="'+ evt.xp_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link\', \'Open\', \'Work Experience: '+ evt.xp_events[i].name +'\']);">Worked @ '+ evt.xp_events[i].name +'</a>'+
                             '</h5>'+
                             '<div class="event_title_des fcg">'+
                             evt.xp_events[i].pos +
@@ -332,7 +364,7 @@ var resume = function() {
                             '<div class="event_bottom_content">'+
                             '<img src="images/info_icon.png" />'+
                             '<span class="additional_name fwb">'+
-                            '<a href="mailto:'+ evt.xp_events[i].boss_detail.email +'">'+ evt.xp_events[i].boss_detail.name +'</a>'+
+                            '<a href="mailto:'+ evt.xp_events[i].boss_detail.email +'" onclick="_gaq.push([\'_trackEvent\', \'Employer Email\', \'Send\', \'to: '+ evt.xp_events[i].boss_detail.name +'\']);">'+ evt.xp_events[i].boss_detail.name +'</a>'+
                             '</span>'+
                             '<span class="additional_type fcg">'+ evt.xp_events[i].boss_detail.pos +'</span>'+
                             '<span class="additional_phone fcb">'+ evt.xp_events[i].boss_detail.phone +'</span>'+
@@ -350,13 +382,13 @@ var resume = function() {
                             '<div class="event_content">'+
                             '<div role="article">'+
                             '<div class="event_header clear">'+
-                            '<a class="event_avatar_wrapper" href="#" target="_blank">'+
+                            '<a class="event_avatar_wrapper" href="#" target="_blank" onclick="_gaq.push([\'_trackEvent\', \'Event Link (Avatar)\', \'Open\', \'General Experience: '+ evt.xp_events[i].name +'\']);">'+
                             '<img src="" class="event_avatar" />'+
                             '</a>'+
                             '<div class="event_title">'+
                             '<span class="fcg">'+ evt.xp_events[i].date_from + (evt.xp_events[i].date_to? ' - ' + evt.xp_events[i].date_to : '') +'</span>'+
                             '<h5 class="event_title_name fcg fwb">'+
-                            '<a target="_blank" href="#"></a>'+
+                            '<a target="_blank" href="#" onclick="_gaq.push([\'_trackEvent\', \'Event Link\', \'Open\', \'General Experience: '+ evt.xp_events[i].name +'\']);"></a>'+
                             '</h5>'+
                             '<div class="event_title_des fcg"></div>'+
                             '</div>'+
@@ -380,12 +412,12 @@ var resume = function() {
                     var rows = '';
                     for (var i = 0; i < evt.activity_events.length; ++i) {
                         rows += '<div class="event_content_text clear list_bb">'+
-                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+
+                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link (Avatar)\', \'Open\', \'Activity and Interests: '+ evt.activity_events[i].name +'\']);">'+
                         '<img src="images/'+ evt.activity_events[i].logo_name +'.png" class="main_content_img_small" />'+
                         '</a>'+
                         '<div>'+
                         '<div class="activities_name fsm fwb">'+
-                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'">'+ evt.activity_events[i].name +'</a>'+
+                        '<a target="_blank" href="'+ evt.activity_events[i].link_url +'" onclick="_gaq.push([\'_trackEvent\', \'Event Link\', \'Open\', \'Activity and Interests: '+ evt.activity_events[i].name +'\']);">'+ evt.activity_events[i].name +'</a>'+
                         '</div>'+
                         '<div class="activities_date fss fcg">'+ evt.activity_events[i].date_from +' - '+ evt.activity_events[i].date_to +'</div>'+
                         '<div class="activities_loc fss fcg">'+ evt.activity_events[i].loc +'</div>'+
