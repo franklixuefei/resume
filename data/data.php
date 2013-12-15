@@ -10,6 +10,12 @@ $data = array();
 $projs = array(
     array(
         'id' => 0,
+        'img_url' => 'images/uwfoodservices.png',
+        'name' => 'UW Food Services',
+        'link_url' => 'http://xuefei-frank.com/uw-foodservices'
+    ),
+    array(
+        'id' => 0,
         'img_url' => 'images/glance.png',
         'name' => 'Glance',
         'link_url' => 'https://github.com/franklixuefei/glance'
