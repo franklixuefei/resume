@@ -12,7 +12,7 @@ $projs = array(
         'id' => 0,
         'img_url' => 'images/uwfoodservices.png',
         'name' => 'UW Food Services',
-        'link_url' => 'http://xuefei-frank.com/uw-foodservices'
+        'link_url' => 'https://github.com/franklixuefei/UW-Food-Services-iOS'
     ),
     array(
         'id' => 0,
